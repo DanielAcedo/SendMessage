@@ -13,11 +13,11 @@ import android.widget.EditText;
  * @author Daniel Acedo Calderón
  *
  */
-public class SendMessage_Activity extends AppCompatActivity implements View.OnClickListener {
+public class SendMessage_Activity extends AppCompatActivity {
     public static final String MESSAGE = "message";
 
-    EditText edt_Message;
-    Button btn_Send;
+    private EditText edt_Message;
+    private Button btn_Send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +25,25 @@ public class SendMessage_Activity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_send_message);
         edt_Message = (EditText)findViewById(R.id.edt_Message);
         btn_Send = (Button)findViewById(R.id.btn_send);
+
+        btn_Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+                    case R.id.btn_send:
+                        sendMessage();
+                        break;
+                }
+            }
+        });
     }
+
 
     /**
      * Handles all button click input
      * @param v The view that has been clicked
      */
+    /*
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -38,7 +51,7 @@ public class SendMessage_Activity extends AppCompatActivity implements View.OnCl
                 sendMessage();
                 break;
         }
-    }
+    }*/
 
     /**
      * Takes a message from the EditText and sends it to ReceiveMessage_Activity

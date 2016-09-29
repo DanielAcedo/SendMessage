@@ -27,6 +27,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_send"
         android:layout_below="@+id/edt_Message"
-        android:onClick="onClick"
+
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
